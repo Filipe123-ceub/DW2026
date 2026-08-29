@@ -1,0 +1,17 @@
+<div id="app">
+  <h1>{{ mensagem }}</h1>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<script>
+  const { createApp } = Vue
+
+  createApp({
+    data() {
+      return {
+        mensagem: 'Olá, Vue 3!'
+      }
+    }
+  }).mount('#app')
+</script>  cd 
