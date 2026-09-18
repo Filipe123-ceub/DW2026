@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #4180ab;
+}
+
+Header {
+    background-color: #333;
+    color: #fff;
+    padding: 24px;
+    text-align: center;
+}
+nav a {
+    color: #06b2dd;
+    text-decoration: none;
+    margin: 0 12px;
+}
+
+main {
+    max-width: 800px;
+    margin: 32px auto;
+    padding: 24px;
+}
+
+section {
+    margin-bottom: 32px;
+}
+
+article {
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #bdbdbd;
+    margin-bottom: 16px;
+}
+.destaque {
+    background-color: #06b2dd;
+    color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.lista-cursos {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.curso {
+    flex: 1;
+    background-color: #f0f0f0;
+    padding: 16px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .lista-cursos {
+        flex-direction: column;
+    }
+    .curso {
+        margin-bottom: 16px;
+    }
+}
