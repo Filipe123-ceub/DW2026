@@ -47,7 +47,7 @@ export default {
       try {
         this.carregando = true;
         const url =
-          "https://dadosabertos.camara.leg.br/api/v2/deputados?siglaUf=MG&ordem=ASC&ordenarPor=nome";
+          "https://dadosabertos.camara.leg.br/api/v2/deputados?siglaUf=DF&ordem=ASC&ordenarPor=nome";
 
         const resposta = await fetch(url);
         const json = await resposta.json();
