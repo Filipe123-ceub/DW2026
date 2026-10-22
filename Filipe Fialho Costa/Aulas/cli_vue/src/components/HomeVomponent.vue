@@ -16,14 +16,14 @@ export default{
     name: 'HomeComponent',
     data() {
         return {
-            nome: "Rubens Corado",
+            nome: "Filipe Fialho",
             altura: 1.75,
-            url: "https://www.rubenscorado.com.br"
+            url: "https://www.FilipeFialho.com.br"
         };
     }, 
     mounted(){
         setTimeout(() => {
-            this.url = "https://www.rubenscorado.com.br/curso-vuejs";
+            this.url = "https://www.FilipeFialho.com.br/curso-vuejs";
         }, 3000);
     }
 };
