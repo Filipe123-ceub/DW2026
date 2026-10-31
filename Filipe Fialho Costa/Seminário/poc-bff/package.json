@@ -1,0 +1,14 @@
+{
+  "name": "poc-bff-orquestracao",
+  "version": "1.0.0",
+  "description": "Prova de conceito do padrão Backend for Frontend (BFF) orquestrando microsserviços independentes",
+  "private": true,
+  "scripts": {
+    "usuarios": "node servicos/usuarios.js",
+    "pedidos": "node servicos/pedidos.js",
+    "recomendacoes": "node servicos/recomendacoes.js",
+    "bff": "node bff/server.js",
+    "start": "node iniciar-tudo.js"
+  },
+  "engines": { "node": ">=18" }
+}

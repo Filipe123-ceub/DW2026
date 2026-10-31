@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PoC BFF — Painel</title>
+  <!-- Vue 3 via CDN (como na aula 5). Precisa de internet ao abrir a página. -->
+  <script type="importmap">
+    { "imports": { "vue": "https://unpkg.com/vue@3.5.13/dist/vue.esm-browser.prod.js" } }
+  </script>
+  <style>
+    :root { --bg:#f4f5f8; --card:#fff; --txt:#1d2230; --sub:#6b7285; --acc:#42b883; --acc2:#35495e; --warn:#b45309; --warnbg:#fef3c7; --err:#b91c1c; --errbg:#fee2e2; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, sans-serif; background:var(--bg); color:var(--txt); }
+    header { background:var(--acc2); color:#fff; padding:14px 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
+    header h1 { font-size:18px; margin:0; }
+    .controles { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+    select, button { font-size:14px; padding:7px 12px; border-radius:6px; border:none; cursor:pointer; }
+    .alternador { display:flex; background:#ffffff22; border-radius:8px; padding:3px; }
+    .alternador button { background:transparent; color:#fff; font-weight:600; }
+    .alternador button.ativo { background:var(--acc); color:#10241a; }
+    main { max-width:1100px; margin:24px auto; padding:0 16px; display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .card { background:var(--card); border-radius:10px; padding:16px 20px; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+    .card h2 { font-size:13px; margin:0 0 10px; color:var(--sub); text-transform:uppercase; letter-spacing:.05em; }
+    .card h3 { font-size:14px; margin:18px 0 8px; }
+    .full { grid-column:1 / -1; }
+    table { width:100%; border-collapse:collapse; font-size:14px; }
+    td { padding:6px 0; border-bottom:1px solid #eee; }
+    .vazio { color:var(--sub); font-style:italic; }
+    .aviso { background:var(--warnbg); color:var(--warn); padding:8px 12px; border-radius:6px; margin:4px 0; }
+    .erro { background:var(--errbg); color:var(--err); font-weight:600; }
+    .numeros { display:grid; grid-template-columns:repeat(auto-fit, minmax(170px, 1fr)); gap:10px; }
+    .numeros div { background:var(--bg); border-radius:8px; padding:10px 12px; font-size:13px; color:var(--sub); }
+    .numeros span { display:block; font-size:22px; font-weight:700; color:var(--txt); }
+    .numeros .perigo { background:var(--errbg); }
+    .numeros .perigo span { color:var(--err); font-size:16px; }
+    .linha { display:grid; grid-template-columns:150px 1fr 70px; align-items:center; gap:10px; margin:6px 0; font-size:13px; }
+    .trilho { position:relative; height:16px; background:var(--bg); border-radius:4px; }
+    .barra { position:absolute; top:0; bottom:0; background:var(--acc); border-radius:4px; }
+    .barra.falha { background:var(--err); }
+    .ms { text-align:right; color:var(--sub); }
+    .legenda { font-size:13px; color:var(--sub); }
+    @media (max-width:760px) { main { grid-template-columns:1fr; } .linha { grid-template-columns:100px 1fr 60px; } }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    // Se em 4s o Vue não montou nada, avisa (normalmente é falta de internet para o CDN)
+    setTimeout(() => {
+      const app = document.getElementById('app');
+      if (!app.children.length) app.innerHTML = '<p style="padding:24px;color:#b91c1c">O Vue não carregou. Verifique a internet (o Vue vem do CDN unpkg.com) e recarregue.</p>';
+    }, 4000);
+  </script>
+  <script type="module">
+    import { createApp } from 'vue';
+    import App from './src/App.js';
+    createApp(App).mount('#app');
+  </script>
+</body>
+</html>
